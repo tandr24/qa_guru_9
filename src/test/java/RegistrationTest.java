@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import pages.component.CheckComponent;
 
-import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.step;
 
 public class RegistrationTest extends TestBase {
 
@@ -13,6 +13,7 @@ public class RegistrationTest extends TestBase {
     @Test
     @Tag("demoqa")
     void formTest() {
+
         registrationPage.openSite("/automation-practice-form")
                 .setFirstName("Name")
                 .setLastName("Surname")
@@ -26,7 +27,7 @@ public class RegistrationTest extends TestBase {
                 .setHobbies("Reading")
                 .setPicture("img.png")
                 .setAddress("Address")
-                .setSate("NCR")
+                .setState("NCR")
                 .setCity("Delhi")
                 .submitForm();
 

@@ -11,5 +11,6 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 5000;
         SelenideLogger.addListener("allure", new AllureSelenide());
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
 }
