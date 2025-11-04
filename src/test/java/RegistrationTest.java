@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import pages.component.CheckComponent;
@@ -10,6 +11,7 @@ public class RegistrationTest extends TestBase {
     CheckComponent checkComponent = new CheckComponent();
 
     @Test
+    @Tag("demoqa")
     void formTest() {
         registrationPage.openSite("/automation-practice-form")
                 .setFirstName("Name")
@@ -43,6 +45,7 @@ public class RegistrationTest extends TestBase {
     }
 
     @Test
+    @Tag("demoqa")
     void minimalFormTest() {
         registrationPage.openSite("/automation-practice-form")
                 .setFirstName("Name")
@@ -61,6 +64,7 @@ public class RegistrationTest extends TestBase {
                 .checkResult("19 May,1998");
     }
 
+    @Tag("demoqa")
     @Test
     void negativeFormTest() {
         registrationPage.openSite("/automation-practice-form")
