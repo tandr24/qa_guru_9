@@ -104,6 +104,7 @@ public class RegistrationPage {
 
     @Step("Set city")
     public RegistrationPage setCity(String value) {
+        cityfieldInput.scrollTo();
         cityfieldInput.click();
         cityInput.setValue(value).pressEnter();
         return this;
