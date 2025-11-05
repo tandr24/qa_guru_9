@@ -25,6 +25,7 @@ public class CheckComponent {
         return this;
     }
 
+    @Step("checking there is no phrase")
     public CheckComponent notHaveResultPhrase() {
         checkInput.shouldNotHave(visible);
         return this;

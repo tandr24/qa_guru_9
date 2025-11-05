@@ -97,6 +97,7 @@ public class RegistrationPage {
 
     @Step("Set State")
     public RegistrationPage setState(String value) {
+        statefieldInput.scrollTo();
         statefieldInput.click();
         stateInput.setValue(value).pressEnter();
         return this;
@@ -112,6 +113,7 @@ public class RegistrationPage {
 
     @Step("Submit Form ")
     public RegistrationPage submitForm() {
+        submitInput.scrollTo();
         submitInput.click();
         return this;
     }
