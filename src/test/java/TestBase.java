@@ -16,7 +16,7 @@ public class TestBase {
     static void setupConfiguration() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.remote = System.getProperty("remote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        Configuration.remote = System.getProperty("remote");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
@@ -30,10 +30,12 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
-        Attachments.screenshotAs("Last screenshot");
-        Attachments.pageSource();
-        Attachments.browserConsoleLogs();
-        Attachments.addVideo();
+        if (Configuration.browser.equals("chrome")) {
+            Attachments.screenshotAs("Last screenshot");
+            Attachments.pageSource();
+            Attachments.browserConsoleLogs();
+            Attachments.addVideo();
+        }
     }
 
     @BeforeEach
